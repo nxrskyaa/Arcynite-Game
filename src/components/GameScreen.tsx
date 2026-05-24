@@ -57,10 +57,18 @@ export default function GameScreen({ maxScorePerRun, submitted, submitting, subm
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [game]);
 
-  const worldStyle = { transform: `translate3d(${-game.cameraX}px, 0, 0)` } as CSSProperties;
   const current = game.currentPlatform;
   const target = game.targetPlatform;
   const egg = eggPosition(current.x, current.y, target.x, target.y);
+  const playerCenter = {
+    x: game.player.x + PLAYER_WIDTH * 0.5,
+    y: game.player.y + PLAYER_HEIGHT * 0.56,
+  };
+  const aimStyle = {
+    left: playerCenter.x,
+    top: playerCenter.y,
+    transform: `translate(-50%, -50%) rotate(${game.aimAngle}rad)`,
+  } as CSSProperties;
 
   return (
     <section className="game-screen" onPointerDown={() => game.attemptJump()}>
@@ -73,12 +81,12 @@ export default function GameScreen({ maxScorePerRun, submitted, submitting, subm
         maxScore={game.maxScorePerRun}
       />
       <div className="sky-props" aria-hidden="true">
-        <AssetImage filename="prop_cloud_small.png" alt="" className="cloud cloud-one" style={{ transform: `translateX(${-game.cameraX * 0.12}px)` }} />
-        <AssetImage filename="prop_cloud_small.png" alt="" className="cloud cloud-two" style={{ transform: `translateX(${-game.cameraX * 0.2}px)` }} />
-        <AssetImage filename="object_arcane_portal.png" alt="" className="tiny-portal" style={{ transform: `translateX(${-game.cameraX * 0.35}px)` }} />
+        <AssetImage filename="prop_cloud_small.png" alt="" className="cloud cloud-one" />
+        <AssetImage filename="prop_cloud_small.png" alt="" className="cloud cloud-two" />
+        <AssetImage filename="object_arcane_portal.png" alt="" className="tiny-portal" />
       </div>
       <div className="playfield">
-        <div className="world-layer" style={worldStyle}>
+        <div className="world-layer" style={{ width: game.arena.width, height: game.arena.height } as CSSProperties}>
           <AssetImage
             filename={platformAsset(current.type)}
             alt=""
@@ -105,6 +113,14 @@ export default function GameScreen({ maxScorePerRun, submitted, submitting, subm
               style={{ left: egg.x, top: egg.y } as CSSProperties}
             />
           )}
+          <div className="target-angle-window" style={{
+            left: playerCenter.x,
+            top: playerCenter.y,
+            transform: `translate(-50%, -50%) rotate(${Math.atan2(target.y + target.height * 0.45 - playerCenter.y, target.x + target.width * 0.5 - playerCenter.x)}rad)`,
+          } as CSSProperties} />
+          <div className="aim-system" style={aimStyle}>
+            <div className="aim-arrow" />
+          </div>
           {game.pickupFx.map((fx) => (
             <div className="pickup-fx" key={fx.id} style={{ left: fx.x, top: fx.y } as CSSProperties}>
               <AssetImage filename="fx_pickup_sparkle.png" alt="" />
@@ -120,7 +136,7 @@ export default function GameScreen({ maxScorePerRun, submitted, submitting, subm
           <AssetImage
             filename="fx_dash_trail.png"
             alt=""
-            className={game.phase === "jumping" ? "dash-trail active" : "dash-trail"}
+            className={game.phase === "dashing" ? "dash-trail active" : "dash-trail"}
             style={{ left: game.player.x - 120, top: game.player.y + 58 } as CSSProperties}
           />
           <AssetImage
@@ -131,7 +147,7 @@ export default function GameScreen({ maxScorePerRun, submitted, submitting, subm
           />
         </div>
       </div>
-      <p className="tap-hint">Tap, click, or press Space to dash toward the highlighted platform.</p>
+      <p className="tap-hint">Tap when aligned</p>
       {game.result && (
         <GameOverModal
           result={game.result}

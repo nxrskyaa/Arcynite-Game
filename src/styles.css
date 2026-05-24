@@ -451,7 +451,7 @@ input:focus {
 .game-screen {
   position: relative;
   display: grid;
-  grid-template-rows: auto minmax(520px, 1fr) auto;
+  grid-template-rows: auto minmax(560px, 1fr) auto;
   gap: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -523,14 +523,15 @@ input:focus {
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: auto, 32px 32px, 32px 32px;
-  min-height: 520px;
+  min-height: 560px;
   overflow: hidden;
 }
 
 .world-layer {
   position: absolute;
-  inset: 0;
-  will-change: transform;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .platform,
@@ -573,7 +574,7 @@ input:focus {
 }
 
 .target-ring {
-  width: 250px;
+  width: 190px;
   opacity: 0.62;
   transform: translate(-50%, -50%);
   animation: pulse 1s ease-in-out infinite;
@@ -590,7 +591,7 @@ input:focus {
 }
 
 .landing-dust {
-  width: 150px;
+  width: 118px;
   opacity: 0;
   transform: translate(-50%, -50%);
 }
@@ -620,6 +621,60 @@ input:focus {
   color: #ffd875;
   font-weight: 900;
   text-shadow: 0 2px 0 #11131a;
+}
+
+.aim-system,
+.target-angle-window {
+  position: absolute;
+  width: 172px;
+  height: 172px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.aim-system {
+  border: 1px solid rgba(115, 227, 255, 0.16);
+  filter: drop-shadow(0 0 8px rgba(115, 227, 255, 0.35));
+}
+
+.aim-arrow {
+  position: absolute;
+  left: calc(100% - 18px);
+  top: 50%;
+  width: 46px;
+  height: 16px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: linear-gradient(90deg, #75e7ff, #ffd875);
+  box-shadow: 0 0 16px rgba(115, 227, 255, 0.75);
+}
+
+.aim-arrow::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 16px solid #ffd875;
+}
+
+.target-angle-window::before {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  width: 38px;
+  height: 46px;
+  transform: translateY(-50%);
+  border: 2px solid rgba(255, 216, 117, 0.9);
+  border-left: 0;
+  border-radius: 0 999px 999px 0;
+  box-shadow: 0 0 15px rgba(255, 216, 117, 0.55);
 }
 
 .tap-hint {

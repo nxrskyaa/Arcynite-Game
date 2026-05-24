@@ -1,4 +1,4 @@
-export type GamePhase = "menu" | "playing" | "jumping" | "falling" | "gameover";
+export type GamePhase = "ready" | "aiming" | "dashing" | "landed" | "failed" | "gameover";
 
 export type EggKind = "gold" | "crystal" | "none";
 export type PlatformType = "normal" | "target" | "cracked";
@@ -15,6 +15,11 @@ export type Platform = {
   eggType: EggKind;
   eggCollected: boolean;
   drift: number;
+};
+
+export type ArenaSize = {
+  width: number;
+  height: number;
 };
 
 export type PlayerPose = "idle" | "jump_start" | "midair" | "landing" | "fall" | "celebrate";
@@ -40,6 +45,7 @@ export type JumpState = {
   startedAt: number;
   duration: number;
   peak: number;
+  fail: boolean;
 };
 
 export type RunResult = {
