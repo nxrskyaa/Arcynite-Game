@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arcynite Generated Asset Preview</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #101114;
+        color: #f5f2e8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          #101114;
+        background-size: 18px 18px;
+      }
+
+      main {
+        width: min(1420px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 44px;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 750;
+      }
+
+      .count {
+        color: #73e3ff;
+        font-size: 14px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+      }
+
+      article {
+        border: 1px solid rgba(245, 190, 82, 0.28);
+        border-radius: 8px;
+        background: rgba(12, 13, 17, 0.86);
+        overflow: hidden;
+      }
+
+      .stage {
+        display: grid;
+        place-items: center;
+        min-height: 190px;
+        padding: 14px;
+        background:
+          linear-gradient(45deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.08) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.08) 75%),
+          #1a1d22;
+        background-position: 0 0, 0 9px, 9px -9px, -9px 0;
+        background-size: 18px 18px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 160px;
+        image-rendering: pixelated;
+        object-fit: contain;
+      }
+
+      .meta {
+        display: grid;
+        gap: 6px;
+        padding: 12px;
+      }
+
+      .filename {
+        margin: 0;
+        overflow-wrap: anywhere;
+        font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        color: #ffd36f;
+      }
+
+      .category {
+        width: fit-content;
+        border: 1px solid rgba(115, 227, 255, 0.4);
+        border-radius: 999px;
+        padding: 3px 8px;
+        color: #9feaff;
+        font-size: 12px;
+      }
+
+      .purpose {
+        margin: 0;
+        min-height: 36px;
+        color: #d7d2c7;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Generated Asset Preview</h1>
+        <div class="count" id="count">Loading assets...</div>
+      </header>
+      <section class="grid" id="grid" aria-label="Generated game assets"></section>
+    </main>
+
+    <script>
+      const grid = document.querySelector("#grid");
+      const count = document.querySelector("#count");
+
+      fetch("./manifest.json")
+        .then((response) => response.json())
+        .then((assets) => {
+          count.textContent = `${assets.length} generated PNG assets`;
+          grid.innerHTML = assets.map((asset) => `
+            <article>
+              <div class="stage">
+                <img src="./${asset.filename}" alt="${asset.filename}" />
+              </div>
+              <div class="meta">
+                <p class="filename">${asset.filename}</p>
+                <span class="category">${asset.category}</span>
+                <p class="purpose">${asset.purpose}</p>
+              </div>
+            </article>
+          `).join("");
+        })
+        .catch((error) => {
+          count.textContent = "Could not load manifest.json";
+          grid.innerHTML = `<article><div class="meta"><p class="purpose">${error.message}</p></div></article>`;
+        });
+    </script>
+  </body>
+</html>

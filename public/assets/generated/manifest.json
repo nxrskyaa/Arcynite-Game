@@ -1,0 +1,272 @@
+[
+  {
+    "id": "player_idle",
+    "filename": "player_idle.png",
+    "path": "/assets/generated/player_idle.png",
+    "category": "player",
+    "purpose": "Main player idle sprite.",
+    "generation_prompt": "Create a 2D pixel art game sprite of the main koala mascot in an idle standing pose. Use the uploaded koala mascot reference as the main design reference. Keep the character design consistent and preserve the exact \"NXR\" text on the black visor. Show the full body. The koala should look cute, centered, and game-ready. Transparent background. Clean crisp pixel art, readable silhouette, simple shading, no extra objects, no UI.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_idle_sheet",
+    "filename": "player_idle_sheet.png",
+    "path": "/assets/generated/player_idle_sheet.png",
+    "category": "player",
+    "purpose": "Idle animation spritesheet for subtle breathing or bobbing.",
+    "generation_prompt": "Create a 2D pixel art spritesheet of the main koala mascot idle animation, 4 frames in one row. Use the uploaded koala mascot reference as the main design reference. Keep the exact same character design, outfit, bow, gray fur, pink ears, and preserve the exact \"NXR\" text on the visor. The idle animation should have a subtle cute breathing or bobbing motion. Transparent background. Crisp pixel art, evenly spaced frames, game-ready.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_run_sheet",
+    "filename": "player_run_sheet.png",
+    "path": "/assets/generated/player_run_sheet.png",
+    "category": "player",
+    "purpose": "Running animation spritesheet.",
+    "generation_prompt": "Create a 2D pixel art spritesheet of the main koala mascot running, 6 frames in one row. Use the uploaded koala mascot reference as the main design reference. Preserve the exact character design and the exact \"NXR\" text on the visor. Show energetic cute running motion suitable for a platformer game. Transparent background. Crisp pixel art, readable silhouette, simple shading, game-ready.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_jump_start",
+    "filename": "player_jump_start.png",
+    "path": "/assets/generated/player_jump_start.png",
+    "category": "player",
+    "purpose": "Jump anticipation pose before dash/hop.",
+    "generation_prompt": "Create a 2D pixel art game sprite of the main koala mascot in a jump start pose, crouched slightly and ready to leap forward. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same character design and the exact \"NXR\" text on the visor. Transparent background. Crisp pixel art, cute arcade style, no UI.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_jump_midair",
+    "filename": "player_jump_midair.png",
+    "path": "/assets/generated/player_jump_midair.png",
+    "category": "player",
+    "purpose": "Mid-air jump or hop sprite.",
+    "generation_prompt": "Create a 2D pixel art game sprite of the main koala mascot in a mid-air jump pose. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same design and exact \"NXR\" visor text. The pose should feel dynamic and suitable for a hop or dash platformer. Transparent background. Crisp pixel art, readable silhouette, game-ready.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_landing",
+    "filename": "player_landing.png",
+    "path": "/assets/generated/player_landing.png",
+    "category": "player",
+    "purpose": "Landing impact sprite.",
+    "generation_prompt": "Create a 2D pixel art game sprite of the main koala mascot in a landing pose after a jump. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same design and the exact \"NXR\" visor text. The character should look slightly compressed from impact in a cute way. Transparent background. Clean pixel art, game-ready.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_dash_sheet",
+    "filename": "player_dash_sheet.png",
+    "path": "/assets/generated/player_dash_sheet.png",
+    "category": "player",
+    "purpose": "Dash animation spritesheet.",
+    "generation_prompt": "Create a 2D pixel art spritesheet of the main koala mascot performing a forward dash, 4 frames in one row. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same design and the exact \"NXR\" visor text. The dash should feel fast and cute, suitable for a timing-based platform game. Transparent background. Crisp pixel art, readable silhouette.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_fall",
+    "filename": "player_fall.png",
+    "path": "/assets/generated/player_fall.png",
+    "category": "player",
+    "purpose": "Failed jump or falling sprite.",
+    "generation_prompt": "Create a 2D pixel art game sprite of the main koala mascot in a falling or failed jump pose. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same design and the exact \"NXR\" visor text. The pose should clearly read as losing balance or falling but still stay cute and game-friendly. Transparent background. Crisp pixel art.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_celebrate_sheet",
+    "filename": "player_celebrate_sheet.png",
+    "path": "/assets/generated/player_celebrate_sheet.png",
+    "category": "player",
+    "purpose": "Victory or high-score celebration animation.",
+    "generation_prompt": "Create a 2D pixel art spritesheet of the main koala mascot celebrating a win, 4 frames in one row. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same design and the exact \"NXR\" visor text. The mascot should look happy and triumphant, suitable for a score or victory moment. Transparent background. Cute crisp pixel art.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "player_portrait_icon",
+    "filename": "player_portrait_icon.png",
+    "path": "/assets/generated/player_portrait_icon.png",
+    "category": "player_ui",
+    "purpose": "Mascot portrait for profile, HUD, and leaderboard.",
+    "generation_prompt": "Create a 2D pixel art portrait icon of the main koala mascot, facing forward, suitable for HUD or profile use. Use the uploaded koala mascot reference as the main design reference. Preserve the exact same design and exact \"NXR\" visor text. Focus on the head and upper body only. Transparent background. Crisp pixel art, simple shading, readable at small size.",
+    "requires_mascot_reference": true
+  },
+  {
+    "id": "platform_normal",
+    "filename": "platform_normal.png",
+    "path": "/assets/generated/platform_normal.png",
+    "category": "platform",
+    "purpose": "Default landing platform.",
+    "generation_prompt": "Create a 2D pixel art floating platform asset for a platformer game. The platform should look like a small floating sky island with grass on top and rocky underside. Transparent background. Clean crisp pixel art, readable silhouette, no character, no UI, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "platform_target",
+    "filename": "platform_target.png",
+    "path": "/assets/generated/platform_target.png",
+    "category": "platform",
+    "purpose": "Highlighted next landing target platform.",
+    "generation_prompt": "Create a 2D pixel art floating target platform asset for a platformer game. The platform should be similar to a small floating sky island but with a magical glowing highlight ring or subtle special accent to show it is the next landing target. Use cyan and gold accents. Transparent background. Crisp pixel art, readable silhouette, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "platform_cracked",
+    "filename": "platform_cracked.png",
+    "path": "/assets/generated/platform_cracked.png",
+    "category": "platform",
+    "purpose": "Danger platform that may break.",
+    "generation_prompt": "Create a 2D pixel art floating cracked platform asset for a platformer game. It should look like a slightly damaged floating island or stone platform that suggests danger or instability. Transparent background. Clean crisp pixel art, readable silhouette, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "egg_gold",
+    "filename": "egg_gold.png",
+    "path": "/assets/generated/egg_gold.png",
+    "category": "collectible",
+    "purpose": "Main collectible egg.",
+    "generation_prompt": "Create a 2D pixel art golden egg collectible for a cute platformer game. The egg should feel valuable, shiny, and magical, with a bright golden color and subtle glow-friendly shading. Transparent background. Clean crisp pixel art, centered, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "egg_crystal_rare",
+    "filename": "egg_crystal_rare.png",
+    "path": "/assets/generated/egg_crystal_rare.png",
+    "category": "collectible",
+    "purpose": "Rare bonus egg.",
+    "generation_prompt": "Create a 2D pixel art rare crystal egg collectible for a cute platformer game. The egg should have a magical arcane look with cyan, blue, and purple crystal-like accents, suitable for a special reward item. Transparent background. Crisp pixel art, readable silhouette, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "fx_pickup_sparkle",
+    "filename": "fx_pickup_sparkle.png",
+    "path": "/assets/generated/fx_pickup_sparkle.png",
+    "category": "vfx",
+    "purpose": "Effect when collecting egg.",
+    "generation_prompt": "Create a 2D pixel art sparkle burst effect for collecting an egg in a cute platformer game. The effect should be small, bright, magical, and satisfying, suitable as a pickup VFX. Use gold and cyan sparkles. Transparent background. Crisp pixel art, no character, no UI, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "fx_dash_trail",
+    "filename": "fx_dash_trail.png",
+    "path": "/assets/generated/fx_dash_trail.png",
+    "category": "vfx",
+    "purpose": "Dash movement effect.",
+    "generation_prompt": "Create a 2D pixel art dash trail effect for a cute fast movement action in a platformer game. The effect should look energetic and suitable for a quick forward dash, using clean pixel motion shapes. Use subtle cyan and white highlights. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "fx_landing_dust",
+    "filename": "fx_landing_dust.png",
+    "path": "/assets/generated/fx_landing_dust.png",
+    "category": "vfx",
+    "purpose": "Landing impact effect.",
+    "generation_prompt": "Create a 2D pixel art landing dust burst effect for when a character lands on a platform. The effect should be cute, readable, and arcade-friendly, with a soft pixel puff look. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "fx_target_pulse_ring",
+    "filename": "fx_target_pulse_ring.png",
+    "path": "/assets/generated/fx_target_pulse_ring.png",
+    "category": "vfx",
+    "purpose": "Target platform pulse indicator.",
+    "generation_prompt": "Create a 2D pixel art magical pulse ring effect to highlight the next landing platform in a timing-based platform game. The ring should look clean, readable, and slightly magical. Use cyan and gold glow accents. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "hazard_spikes",
+    "filename": "hazard_spikes.png",
+    "path": "/assets/generated/hazard_spikes.png",
+    "category": "hazard",
+    "purpose": "Basic obstacle hazard.",
+    "generation_prompt": "Create a 2D pixel art spike hazard asset for a cute platformer game. The spikes should be clear and readable, slightly stylized, and suitable as a dangerous obstacle. Use dark stone with subtle gold/cyan edge highlights. Transparent background. Clean crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "prop_crystal_small",
+    "filename": "prop_crystal_small.png",
+    "path": "/assets/generated/prop_crystal_small.png",
+    "category": "prop",
+    "purpose": "Decorative crystal prop.",
+    "generation_prompt": "Create a 2D pixel art small decorative crystal prop for a fantasy sky-island platformer game. The crystal should have subtle cyan-blue magical tones and be suitable as environment decoration. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "prop_grass_tuft",
+    "filename": "prop_grass_tuft.png",
+    "path": "/assets/generated/prop_grass_tuft.png",
+    "category": "prop",
+    "purpose": "Small platform decoration.",
+    "generation_prompt": "Create a 2D pixel art grass tuft prop for decorating floating platforms in a cute platformer game. The grass should be small, readable, and charming. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "prop_mushroom",
+    "filename": "prop_mushroom.png",
+    "path": "/assets/generated/prop_mushroom.png",
+    "category": "prop",
+    "purpose": "Fantasy environment decoration.",
+    "generation_prompt": "Create a 2D pixel art mushroom prop for decorating a cute fantasy platformer game. It should be small, charming, and easy to read at game scale. Add a subtle magical cyan dot accent. Transparent background. Clean crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "prop_cloud_small",
+    "filename": "prop_cloud_small.png",
+    "path": "/assets/generated/prop_cloud_small.png",
+    "category": "prop",
+    "purpose": "Sky decoration.",
+    "generation_prompt": "Create a 2D pixel art small floating cloud prop for a sky-themed platformer game. The cloud should be soft, cute, and suitable for decorating the background or scene edges. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "object_arcane_portal",
+    "filename": "object_arcane_portal.png",
+    "path": "/assets/generated/object_arcane_portal.png",
+    "category": "object",
+    "purpose": "Start point, transition gate, or special object.",
+    "generation_prompt": "Create a 2D pixel art magical arcane portal object for a fantasy platformer game. The portal should feel mysterious and slightly tech-magic inspired, with cyan, blue, purple, black, and gold accents, suitable for a start point or special object. Transparent background. Crisp pixel art, readable silhouette, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "object_treasure_chest",
+    "filename": "object_treasure_chest.png",
+    "path": "/assets/generated/object_treasure_chest.png",
+    "category": "object",
+    "purpose": "Reward object.",
+    "generation_prompt": "Create a 2D pixel art treasure chest asset for a cute fantasy platformer game. The chest should look charming and rewarding, with black-and-gold details matching the mascot palette. Clean pixel shading and readable detail. Transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "ui_icon_egg",
+    "filename": "ui_icon_egg.png",
+    "path": "/assets/generated/ui_icon_egg.png",
+    "category": "ui",
+    "purpose": "Egg counter HUD icon.",
+    "generation_prompt": "Create a 2D pixel art HUD icon of a golden egg for use in the score or collectible counter in a game UI. The icon should be simple, small, and very readable. Transparent background. Crisp pixel art, no text, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "ui_icon_combo_sparkle",
+    "filename": "ui_icon_combo_sparkle.png",
+    "path": "/assets/generated/ui_icon_combo_sparkle.png",
+    "category": "ui",
+    "purpose": "Combo/streak HUD icon.",
+    "generation_prompt": "Create a 2D pixel art HUD icon representing combo or streak energy for a platformer game. It should look like a small magical sparkle star burst, simple and readable for UI use. Use cyan and gold accents. Transparent background. Crisp pixel art, no text, game-ready.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "ui_avatar_frame",
+    "filename": "ui_avatar_frame.png",
+    "path": "/assets/generated/ui_avatar_frame.png",
+    "category": "ui",
+    "purpose": "Profile avatar frame for X avatar / leaderboard avatar.",
+    "generation_prompt": "Create a 2D pixel art UI avatar frame for a cute fantasy platformer game. The frame should be decorative but clean, suitable for showing the player avatar during profile creation or leaderboard view. Use a black, gold, and subtle cyan magical accent palette. Transparent background. Crisp pixel art, no text, no mockup, game-ready UI asset.",
+    "requires_mascot_reference": false
+  },
+  {
+    "id": "ui_empty_panel",
+    "filename": "ui_empty_panel.png",
+    "path": "/assets/generated/ui_empty_panel.png",
+    "category": "ui",
+    "purpose": "Reusable UI panel for profile creation, game over, and leaderboard.",
+    "generation_prompt": "Create a 2D pixel art UI panel for a cute fantasy platformer game. The panel should be an empty decorative frame suitable for profile creation, score popup, or leaderboard UI. Use a clean black, gold, and subtle magical cyan accent style, consistent with the koala mascot's outfit palette. No text inside, no icons, transparent background. Crisp pixel art, game-ready.",
+    "requires_mascot_reference": false
+  }
+]
