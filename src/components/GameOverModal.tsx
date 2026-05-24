@@ -7,12 +7,13 @@ type GameOverModalProps = {
   submitted: boolean;
   submitting: boolean;
   submitError?: string;
+  onchainBest?: bigint;
   onSubmitScore: () => void;
   onRestart: () => void;
   onMenu: () => void;
 };
 
-export default function GameOverModal({ result, submitted, submitting, submitError, onSubmitScore, onRestart, onMenu }: GameOverModalProps) {
+export default function GameOverModal({ result, submitted, submitting, submitError, onchainBest, onSubmitScore, onRestart, onMenu }: GameOverModalProps) {
   return (
     <div className="modal-backdrop">
       <div className="pixel-panel gameover-panel">
@@ -26,6 +27,10 @@ export default function GameOverModal({ result, submitted, submitting, submitErr
           <strong>{result.combo}</strong>
           <span>Duration</span>
           <strong>{result.durationSeconds}s</strong>
+          <span>Local Best</span>
+          <strong>{result.localBest.toLocaleString()}</strong>
+          <span>Onchain Best</span>
+          <strong>{(onchainBest ?? 0n).toLocaleString()}</strong>
         </div>
         <SubmitScorePanel
           submitted={submitted}

@@ -451,8 +451,8 @@ input:focus {
 .game-screen {
   position: relative;
   display: grid;
-  grid-template-rows: auto minmax(420px, 1fr) auto auto;
-  gap: 14px;
+  grid-template-rows: auto minmax(520px, 1fr) auto;
+  gap: 10px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -462,15 +462,15 @@ input:focus {
   z-index: 5;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hud-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 46px;
-  padding: 8px 12px;
+  min-height: 38px;
+  padding: 6px 10px;
 }
 
 .hud-pill.compact {
@@ -523,102 +523,103 @@ input:focus {
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: auto, 32px 32px, 32px 32px;
-  min-height: 420px;
+  min-height: 520px;
   overflow: hidden;
+}
+
+.world-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
 }
 
 .platform,
 .floating-egg,
 .player-sprite,
 .target-ring,
-.dash-trail {
+.dash-trail,
+.landing-dust,
+.pickup-fx {
   position: absolute;
   object-fit: contain;
 }
 
-.platform {
-  width: min(28vw, 300px);
-}
-
-.current-platform {
-  left: 8%;
-  top: 62%;
-}
-
 .target-platform {
-  transform: translate(-18%, 0);
+  filter: drop-shadow(0 0 14px rgba(115, 227, 255, 0.65));
 }
 
 .floating-egg {
-  width: 62px;
+  width: 64px;
   transform: translate(-50%, -50%);
   animation: bob 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 216, 117, 0.45));
 }
 
 .player-sprite {
-  left: 12%;
-  top: 38%;
-  width: min(24vw, 220px);
   filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.45));
-  transition: transform 180ms ease;
+  transition: scale 120ms ease;
 }
 
 .pose-midair {
-  transform: translate(32vw, -8vh) rotate(4deg);
+  transform: rotate(4deg);
 }
 
 .pose-landing {
-  transform: translate(35vw, 7vh) scaleY(0.94);
+  scale: 1.06 0.92;
 }
 
 .pose-fall {
-  transform: translate(18vw, 24vh) rotate(14deg);
+  transform: rotate(14deg);
 }
 
 .target-ring {
-  left: 55%;
-  top: 58%;
-  width: 230px;
+  width: 250px;
   opacity: 0.62;
   transform: translate(-50%, -50%);
   animation: pulse 1s ease-in-out infinite;
 }
 
 .dash-trail {
-  left: 27%;
-  top: 47%;
-  width: min(30vw, 330px);
+  width: 260px;
   opacity: 0;
+  transform: translate(-50%, -50%);
 }
 
 .dash-trail.active {
+  opacity: 0.72;
+}
+
+.landing-dust {
+  width: 150px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.landing-dust.active {
   opacity: 0.9;
+  animation: dust-pop 420ms ease-out;
 }
 
-.timing-bar {
-  position: relative;
-  height: 24px;
-  border: 2px solid #f3bd51;
-  border-radius: 7px;
-  background: rgba(3, 7, 14, 0.8);
-  overflow: hidden;
+.pickup-fx {
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 116px;
+  transform: translate(-50%, -50%);
+  animation: pickup-float 700ms ease-out forwards;
 }
 
-.timing-zone {
+.pickup-fx img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pickup-fx span {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, rgba(115, 227, 255, 0.18), rgba(255, 216, 117, 0.9), rgba(115, 227, 255, 0.18));
-  box-shadow: 0 0 18px rgba(115, 227, 255, 0.6);
-}
-
-.timing-needle {
-  position: absolute;
-  top: -2px;
-  bottom: -2px;
-  width: 4px;
-  background: #ffffff;
-  box-shadow: 0 0 12px #75e7ff;
+  color: #ffd875;
+  font-weight: 900;
+  text-shadow: 0 2px 0 #11131a;
 }
 
 .tap-hint {
@@ -713,6 +714,37 @@ input:focus {
   }
 }
 
+@keyframes dust-pop {
+  0% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  35% {
+    opacity: 0.95;
+    scale: 1.05;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.25;
+  }
+}
+
+@keyframes pickup-float {
+  0% {
+    opacity: 0;
+    translate: 0 12px;
+    scale: 0.75;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    translate: 0 -42px;
+    scale: 1.08;
+  }
+}
+
 @media (max-width: 900px) {
   .screen,
   .game-screen {
@@ -750,7 +782,7 @@ input:focus {
   }
 
   .game-screen {
-    grid-template-rows: auto minmax(380px, 1fr) auto auto;
+    grid-template-rows: auto minmax(430px, 1fr) auto;
   }
 }
 

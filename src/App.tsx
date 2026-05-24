@@ -219,6 +219,7 @@ export default function App() {
               submitted={submitted}
               submitting={submitting}
               submitError={submitError}
+              onchainBest={profile.bestScore}
               onSubmitScore={handleSubmitScore}
               onExitToMenu={() => {
                 setLocalBest(Number(localStorage.getItem(LOCAL_BEST_KEY) ?? 0));

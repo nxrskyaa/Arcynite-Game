@@ -26,7 +26,7 @@ export default function MainMenu({ account, profile, localBest, leaderboard, lea
           <div>
             <span className="eyebrow">Profile Unlocked</span>
             <h1>Arcynite</h1>
-            <p>Time each dash, collect eggs, protect the combo, and submit your best run on Arc Testnet.</p>
+            <p>Hop platform to platform, grab eggs in the air, protect the combo, and submit your best run on Arc Testnet.</p>
           </div>
           <div className="avatar-shell small">
             <AssetImage filename="ui_avatar_frame.png" alt="" className="avatar-frame" />
@@ -68,7 +68,6 @@ export default function MainMenu({ account, profile, localBest, leaderboard, lea
         </div>
         <div className="menu-actions">
           <button className="primary-button" type="button" onClick={onStartGame}>Start Dash Run</button>
-          <a className="ghost-button" href="/assets/generated/index.html" target="_blank" rel="noreferrer">Asset Preview</a>
         </div>
         <div className="menu-assets" aria-hidden="true">
           <AssetImage filename="platform_target.png" alt="" />

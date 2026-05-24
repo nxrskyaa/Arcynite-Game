@@ -10,3 +10,8 @@ export function scoreLanding(combo: number, egg: EggKind, maxScore: number, curr
   const gained = Math.round((BASE_LANDING_SCORE + eggScore) * comboMultiplier(combo));
   return Math.min(maxScore, currentScore + gained);
 }
+
+export function scorePickup(combo: number, egg: EggKind, maxScore: number, currentScore: number) {
+  const base = egg === "crystal" ? CRYSTAL_EGG_SCORE : egg === "gold" ? GOLD_EGG_SCORE : 0;
+  return Math.min(maxScore, currentScore + Math.round(base * comboMultiplier(Math.max(combo, 1))));
+}
